@@ -60,8 +60,8 @@ class App extends Component {
         <Table className={classes.table}>
           <TableHead>
             <TableRow>
-              <TableCell> ID </TableCell>
-              <TableCell> 이미지 </TableCell>
+              {/* <TableCell> ID </TableCell>
+              <TableCell> 이미지 </TableCell> */}
 
               <TableCell> 구분 </TableCell>
               <TableCell> 번호 </TableCell>
@@ -81,8 +81,9 @@ class App extends Component {
           <TableBody>
                     
           {this.state.hanjas ? this.state.hanjas.map(c => {
-            return ( <Hanja key={c.no} 
-                       id={c.no} 
+            return ( <Hanja 
+                      // key={c.no} 
+                       //id={c.no} 
                        //image={c.image} 
                        dv={c.dv} no={c.no} wdhj={c.wdhj} snd={c.snd} msnd2={c.msnd2} 
                        clscd={c.clscd} totclsnm2={c.totclsnm2} clsnm2={c.clsnm2} rdc={c.rdc} hjcnt={c.hjcnt} 
