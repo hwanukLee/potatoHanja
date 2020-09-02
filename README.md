@@ -1,3 +1,6 @@
+## Potato Hanja System
+한자관리 시스템
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
