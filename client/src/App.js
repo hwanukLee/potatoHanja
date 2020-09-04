@@ -160,13 +160,25 @@ class App extends Component {
         return <Hanja 
                 stateRefresh={this.stateRefresh}
                 key={c.hjno}
-                hjdv={c.hjdv} hjno={c.hjno} wdhj={c.wdhj} snd={c.snd} msnd2={c.msnd2} 
-                clscd={c.clscd} totclsnm2={c.totclsnm2} clsnm2={c.clsnm2} rdc={c.rdc} hjcnt={c.hjcnt} 
-                tothjcnt={c.tothjcnt} /> 
+                //hjdv={c.hjdv} hjno={c.hjno}                 
+                wdhj={c.wdhj} snd={c.snd} msnd2={c.msnd2} 
+                //clscd={c.clscd} 
+                totclsnm2={c.totclsnm2} 
+                //clsnm2={c.clsnm2} 
+                rdc={c.rdc} 
+                hjcnt={c.hjcnt} 
+                tothjcnt={c.tothjcnt} 
+                /> 
       });
     }
 
-    const cellList =["구분","번호","한자","음","훈음2","급수코드","급수명1","급수명2","부수","획수","총획수","설정"];
+    //const cellList =["구분","번호","한자","음","훈음2","급수코드","급수명1","급수명2","부수","획수","총획수","설정"];
+    //const cellList =["한자","음","훈음2","급수코드","급수명1","급수명2","부수","획수","총획수","설정"];
+    const cellList =["한자","음","훈음",
+    //"급수코드",
+    "급수",
+    //"급수명2",
+    "부수","획수","총획수","설정"];
     const { classes } = this.props;
 
     return (
@@ -231,7 +243,7 @@ class App extends Component {
                         tothjcnt={c.tothjcnt} /> ); })  */
             : 
             <TableRow>
-              <TableCell colSpan="11" align="center">
+              <TableCell colSpan="9" align="center">
                 <CircularProgress className={classes.progress} variant="determinate" value={this.state.completed} />
               </TableCell>
             </TableRow>

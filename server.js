@@ -11,7 +11,7 @@ const db_conn_file = fs.readFileSync('./database.json');
 const mysql = require('mysql');
 const conf = JSON.parse(db_conn_file);
 
-const sql ="SELECT t.HJ_NO hjno, t.HJ_DV hjdv, t.WD_HJ wdhj, t.SND snd, t.DSC dsc, t.CLS_CD clscd, t.TOT_CLS_NM2 totclsnm2, t.CLS_NM2 clsnm2, t.MSND2 msnd2, t.RDC rdc, t.HJ_CNT hjcnt, t.TOT_HJ_CNT tothjcnt FROM THJ_TOT_HJ_DICS_TEST t WHERE 1=1 AND t.DEL_YN='N' ORDER BY t.CLS_CD,t.HJ_NO LIMIT 100";
+const sql ="SELECT t.HJ_NO hjno, t.HJ_DV hjdv, t.WD_HJ wdhj, t.SND snd, t.DSC dsc, t.CLS_CD clscd, t.TOT_CLS_NM2 totclsnm2, t.CLS_NM2 clsnm2, t.MSND2 msnd2, t.RDC rdc, t.HJ_CNT hjcnt, t.TOT_HJ_CNT tothjcnt FROM THJ_TOT_HJ_DICS_TEST t WHERE 1=1 AND t.DEL_YN='N' AND t.HJ_DV='사자성어' ORDER BY t.CLS_CD,t.HJ_NO LIMIT 100";
 //const sql ="SELECT t.HJ_NO hjno, t.HJ_DV hjdv, t.WD_HJ wdhj, t.SND snd, t.DSC dsc, t.CLS_CD clscd, t.TOT_CLS_NM2 totclsnm2, t.CLS_NM2 clsnm2, t.MSND2 msnd2, t.RDC rdc, t.HJ_CNT hjcnt, t.TOT_HJ_CNT tothjcnt FROM THJ_TOT_HJ_DICS_TEST t WHERE 1=1 AND t.DEL_YN='N' ORDER BY t.CLS_CD,t.HJ_NO LIMIT 5";
 
 //const sql ="SELECT t.HJ_NO no, t.HJ_DV dv, t.WD_HJ wdhj, t.SND snd, t.DSC dsc, t.CLS_CD clscd, t.TOT_CLS_NM2 totclsnm2, t.CLS_NM2 clsnm2, t.MSND2 msnd2, t.RDC rdc, t.HJ_CNT hjcnt, t.TOT_HJ_CNT tothjcnt FROM THJ_TOT_HJ_DICS t WHERE 1=1 AND t.DEL_YN='N' ORDER BY t.CLS_CD,t.HJ_NO LIMIT 5";

@@ -9,14 +9,14 @@ class Hanja extends React.Component {
             <TableRow>
                 {/* <TableCell> {this.props.no} </TableCell>
                 <TableCell> <img src={this.props.image} alt="" /> </TableCell> */}
-                <TableCell> {this.props.hjdv} </TableCell>
-                <TableCell> {this.props.hjno} </TableCell>
+                {/* <TableCell> {this.props.hjdv} </TableCell>
+                <TableCell> {this.props.hjno} </TableCell> */}
                 <TableCell> <h2>{this.props.wdhj}</h2> </TableCell>
                 <TableCell> {this.props.snd} </TableCell>
                 <TableCell> {this.props.msnd2} </TableCell>
-                <TableCell> {this.props.clscd} </TableCell>
+                {/* <TableCell> {this.props.clscd} </TableCell> */}
                 <TableCell> {this.props.totclsnm2} </TableCell>
-                <TableCell> {this.props.clsnm2} </TableCell>
+                {/* <TableCell> {this.props.clsnm2} </TableCell> */}
                 <TableCell> {this.props.rdc} </TableCell>
                 <TableCell> {this.props.hjcnt} </TableCell>
                 <TableCell> {this.props.tothjcnt} </TableCell>
