@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Hanja from './components/Hanja';
+import HanjaAdd from './components/HanjaAdd';
 
 import Table from '@material-ui/core/Table';
 import TableHead from '@material-ui/core/TableHead';
@@ -16,7 +17,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
-import { fade, makeStyles } from '@material-ui/core/styles';
+//import { fade, makeStyles } from '@material-ui/core/styles';
+import { fade } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 
@@ -121,6 +123,7 @@ class App extends Component {
       completed: 0,
       searchKeyword: ''
     });
+    //한자 데이타 호출
     this.callApi()
       .then(res => this.setState({hanjas: res}))
       .catch(err => console.log(err)); 
@@ -158,14 +161,15 @@ class App extends Component {
         return c.snd.indexOf(this.state.searchKeyword) > -1;
       });
       return data.map((c) => {
-        return <Hanja stateRefresh={this.stateRefresh}
-                key={c.no}
-                dv={c.dv} no={c.no} wdhj={c.wdhj} snd={c.snd} msnd2={c.msnd2} 
+        return <Hanja 
+                stateRefresh={this.stateRefresh}
+                key={c.hjno}
+                hjdv={c.hjdv} hjno={c.hjno} wdhj={c.wdhj} snd={c.snd} msnd2={c.msnd2} 
                 clscd={c.clscd} totclsnm2={c.totclsnm2} clsnm2={c.clsnm2} rdc={c.rdc} hjcnt={c.hjcnt} 
                 tothjcnt={c.tothjcnt} /> 
       });
     }
-    const cellList =["구분","번호","한자","음","훈음2","급수코드","급수명1","급수명2","부수","획수","총획수"];
+    const cellList =["구분","번호","한자","음","훈음2","급수코드","급수명1","급수명2","부수","획수","총획수","설정"];
     const { classes } = this.props;
 
     return (
@@ -235,8 +239,11 @@ class App extends Component {
             }
             </TableBody>
           </Table>
-        
         </Paper>
+
+        {/* 한자추가 props 형태로 */}
+        <HanjaAdd stateRefresh={this.stateRefresh} />
+
       </div>
 
     )
